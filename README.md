@@ -44,3 +44,12 @@ The App
 -
 
 The web app is a pretty simple Node.js app. All of the server code is in `app.js`, which parses the questions from the input json file and exposes endpoints for getting questions and checking answers. The client code is in the `static` directory, which includes Javascript that handles user input and fetches data from the server.
+
+Potential Improvements
+-
+
+There are some fairly obvious problems in the current approach that I would fix if I had more time:
+
+- Right now only the sentence and word strings are saved to the json file, without indicating the position of the word in the sentence. Words that appear twice in a sentence are never chosen, but if the chosen word is a substring of another word in the sentence, some of the js code will produce bad outputs.
+- The keyword choosing code heavily favors cardinal numbers, which is good because they are usually well-constrained fill in the blank answers, but from eyeballing the outputs, it seems like too many of the questions have numbers blanked out instead of words.
+- Besides the number problem, there are some other sentences that aren't great fill in the blank questions. The weighting of the sentence and word scores can be tweaked further, and more scoring functions can be added to make this better.
