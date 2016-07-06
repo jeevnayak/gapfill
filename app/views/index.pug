@@ -1,0 +1,19 @@
+html
+  head
+    title= "Fill in the Blank"
+    script(src='/js/external/jquery-3.0.0.min.js')
+    script(src='/js/main.js')
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    #title
+      | Fill in the blank:
+    #content
+      #sentence
+      #guess-form
+        input(id="answer-input", type="text")
+        button(id="submit-button")
+          | Submit
+      #results
+        span(id="result")
+        button(id="next-button")
+          | Next question
