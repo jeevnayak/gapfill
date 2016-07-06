@@ -8,12 +8,10 @@ Installation
 
 - Clone the repository
 - Make sure you have Python and Node.js installed
-
 - In the `parser` directory, run `pip install -r requirements.txt`
 - To re-fetch the articles from Wikipedia, run `python wiki_fetcher.py`
 - To regenerate the questions from the fetched articles, run `python wiki_parser.py`
 - To use the new list of questions in the web app, copy `outputs/gapfill_questions.json` to the `app/data` directory
-
 - In the `app` directory, run `npm install`
 - Run `node app.js`
 - Go to `localhost:3000` in your browser to try it out!
@@ -40,7 +38,7 @@ The approach for choosing sentences and keywords was mostly inspired by this pap
 - The number of nouns in the sentence
 - The number of pronouns in the sentence (this is a negative signal)
 
-Each chosen sentence is then broken down into noun phrases and one candidate is chosen from each noun phrase. The best word is chosen from the candidate list based on how often that word appears in the article and whether it appears in the article title.
+Each chosen sentence is then broken down into noun phrases and one candidate word to blank out is chosen from each noun phrase. The best word is chosen from the candidate list based on how often that word appears in the article and whether it appears in the article title.
 
 The App
 -
